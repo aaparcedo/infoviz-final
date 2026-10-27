@@ -1,0 +1,111 @@
+/* ===== Theme tokens ===== */
+:root {
+  /* Editorial palette — newspaper neutrals + a single warm accent */
+  --paper: #fbfaf7;
+  --ink: #14110d;
+  --ink-soft: #4a4641;
+  --ink-mute: #8b857d;
+  --rule: #e3ddd2;
+  --accent: #d65a3a;     /* warm coral */
+  --accent-soft: #f4d8cc;
+
+  /* Typography */
+  --serif: "Georgia", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Inter", sans-serif;
+  --mono: "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+  /* Scale */
+  --measure: 36rem;
+  --gutter: 1.5rem;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* Headings — newspaper weight and tracking */
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.25rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+h3 { font-size: 1.15rem; font-weight: 600; }
+
+p {
+  margin: 0 0 1.1em;
+  max-width: var(--measure);
+}
+
+/* Labels and metadata in sans */
+.label, .meta, .axis text, .annotation {
+  font-family: var(--sans);
+}
+
+.meta {
+  font-size: 0.78rem;
+  color: var(--ink-mute);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+/* Layout primitives */
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.column {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Rule */
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+/* Source/footnote */
+.source {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* SVG defaults */
+svg { display: block; }
+.axis line, .axis path { stroke: var(--ink-mute); stroke-width: 1; }
+.axis text { fill: var(--ink-soft); font-size: 0.72rem; }
